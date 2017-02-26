@@ -4,7 +4,7 @@ This directory contains the translations from Docker Lutorials and Labs
 
 ### Translations
 
-*[pt-br](/translations/pt-br/)
+- [pt-br](/translations/pt-br/)
 
 
 ### Contribuitions
