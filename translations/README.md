@@ -1,6 +1,6 @@
 ## About this directory
 
-This directory contains the translations from Docker Lutorials and Labs
+This directory contains the translations from Docker Tutorials and Labs
 
 ### Translations
 
