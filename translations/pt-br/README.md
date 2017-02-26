@@ -5,7 +5,8 @@
 Este repositório contém tutoriais e laboratórios sobre [Docker](https://docker.com) criados por Docker e por membros da comunidade. Desejamos que o repositório cresça e estamos abertos à contribuições.
 
 #### Tutoriais Docker:
-* [Docker para iniciantes](beginner/readme.md)
+
+* [Docker para iniciantes](/translations/pt-br/beginner/README.md)
 
 Para mais informações, veja a documentação oficial em [Docker documentation](https://docs.docker.com).
 
