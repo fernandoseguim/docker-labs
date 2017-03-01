@@ -10,7 +10,7 @@ $ docker pull alpine
 
 > **Nota:** Dependendo de como você tem o docker em seu sistema, você pode ter o erro `permission denied` após executar o comando acima. Tente os comandos de do tutorial de introdução para [verificar sua instalação](https://docs.docker.com/engine/getstarted/step_one/#/step-3-verify-your-installation). Se você está usando o Linux, talvez você acrescentar o prefixo `sudo` antes do comando `docker`. Como alternativa, você pode [criar um grupo](https://docs.docker.com/engine/installation/linux/ubuntulinux/#/create-a-docker-group) para solucionar este "problema".
 
-O comando `pull` busca a **imagem** do alpine linux no **Docker registry** e salve em seu sistema. Você pode usar o comando `docker images` para obter a lista de todas as imagens em seu sistema.
+O comando `pull` busca a **imagem** do alpine linux no **Docker registry** e a salva em seu sistema. Você pode usar o comando `docker images` para obter a lista de todas as imagens em seu sistema.
 
 ```
 $ docker images
@@ -34,7 +34,7 @@ drwxr-xr-x    5 root     root          4096 Mar  2 16:20 lib
 ......
 ```
 
-O que aconteceu? Por trás dos panos, muitas coisas aconteceram. Quando você executou o comando `run`, o cliente Docker procurou a imagem (neste caso, a do alpine linux), criou o contêiner e em seguida, executou um comando neste contêiner. QUando você executou `docker run alpine`, você acrescentou o comando (`ls -l`), então o Docker iniciou o comando especificado e você viu a listagem.
+O que aconteceu? Por trás dos panos, muitas coisas aconteceram. Quando você executou o comando `run`, o cliente Docker procurou a imagem (neste caso, a do alpine linux), criou o contêiner e em seguida, executou um comando neste contêiner. Quando você executou `docker run alpine`, você acrescentou o comando (`ls -l`), então o Docker iniciou o comando especificado e você viu a listagem.
 
 Vamos tentar algo mais emocionante.
 
@@ -43,7 +43,7 @@ $ docker run alpine echo "hello from alpine"
 hello from alpine
 ```
 
-OK, está é apenas uma saída (output). Neste caso, o cliente Docker executou o comando `echo` em nosso contêiner alpine linux e em seguida, saiu dele.
+Ok, está é apenas uma saída (output). Neste caso, o cliente Docker executou o comando `echo` em nosso contêiner alpine linux e em seguida, saiu dele.
 
 Agora tente outro comando.
 
@@ -51,15 +51,12 @@ Agora tente outro comando.
 $ docker run alpine /bin/sh
 ```
 
-Espere, não aconteceu nada! Será que é um bug? Bem, não é um bug. Shells interativos sairão depois de executar qualquer comandos com script, a menos que eles 
-
-
 Espere, não aconteceu nada! Será que é um bug? Bem, não é um bug. Estes shells interativos encerrarão após executar qualquer comando, a menos que sejam executados em um terminal interativo - então neste caso, você precisa acrescentar o parâmentro `-it` para rodar o comando `docker run -it alpine /bin/sh`.
 
 Agora você está dentro do contêiner e você pode testar alguns comandos como s `ls -l`, `uname -a`, entre outros. Para sair do contêiner bastar executar o comando `exit`.
 
 
-OK, agora iremos ver o comando `docker ps`. Este comando exibirá todos os contêiners que estão em execução atualmente.
+Ok, agora iremos ver o comando `docker ps`. Este comando exibirá todos os contêiners que estão em execução atualmente.
 
 ```
 $ docker ps
@@ -97,7 +94,7 @@ Nesta seção você viu muitas expressões específicas do Docker que podem caus
 
 - *Imagens  (em inglês, Images)* - O arquivo do sistema e configurações de sya aplicação que são usadas para criar contêiners. Para saber mais sobre uma imagem Docker, execute o comando `docker inspect alpine` (alpine pois se trata do imagem utilizada nesta etapa do laboratório). Na demonstração acima, você usou o comando `docker pull`para baixar a imagem **alpine**. Quando você executou o comando `docker run hello-world`, por trás dos panos o Docker também executou o comando `docker pull` para baixar a imagem **hello-world**.
 - *Contêiners (em inglês, Containers)* - Istancias Docker em execução - as aplicações rodam em contêiners. Um contêiner inclui uma aplicaçãoe todas as suas dependências. Um contêiner compatilha o kernel com outros contêiners e é executado como um processo isolado no sistema operacional hospedeiro (host). Você criou um contêiner usando o comando `docker run` que usando a imagem do alpine linux que havia baixado previamente. Uma lista com os contêiners em execução pode ser obtida usando o comando `docker ps`.
-- *Docker daemon* - O serviço executado em segundo plano no host que gerencia o construção (build), a execução e o distribuição (deploy) dos contêiners.
+- *Docker Daemon* - O serviço executado em segundo plano no host que gerencia o construção (build), a execução e o distribuição (deploy) dos contêiners.
 - *Cliente Docker (em inglês, Docker client)* - O utilitário de linha de comando que possibilita que o usuário interaja com o Docker daemon.
 - *Docker Hub* - Um [repositório (registro)](https://hub.docker.com/explore/) de imagens Docker. Trata-se de um repositório com todas as imagens Docker disponíveis. Você usará posteriormente neste tutorial.
 
